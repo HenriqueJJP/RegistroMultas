@@ -35,6 +35,9 @@ public class Taxi extends Veiculo implements Serializable{
     @OneToMany
     private List<Veiculo> veiculo;
     
+    @OneToMany(mappedBy = "Taxi")
+    private List<Auxiliar> auxiliar;
+    
     public Long getConcessao() {
         return concessao;
     }

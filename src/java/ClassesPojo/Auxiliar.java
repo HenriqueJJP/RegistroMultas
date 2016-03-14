@@ -4,6 +4,8 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -34,6 +36,12 @@ public class Auxiliar implements Serializable {
     
     @Column(name="Antecedente")
     private boolean antecedente;
+    
+    @OneToOne
+    private Moto_Taxi moto_taxi;
+    
+    @ManyToOne
+    private Taxi taxi;
     
     public Auxiliar(){
         

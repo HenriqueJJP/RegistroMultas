@@ -1,9 +1,11 @@
 package ClassesPojo;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -21,6 +23,9 @@ public class Ponto implements Serializable {
     
     @Column(name="ModeloVeiculo")
     private String modelo_veiculo;
+    
+    @OneToMany(mappedBy = "ponto")
+    private List<Veiculo> veiculo;
 
     public Ponto(){
         

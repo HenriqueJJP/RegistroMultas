@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -22,6 +23,7 @@ import javax.persistence.Table;
 @Inheritance(strategy = InheritanceType.JOINED)
 @NamedQuery(name = "Veiculo.consultatipos", query = "SELECT * FROM a.Veiculo a inner join (SELECT * FROM b.Taxi WHERE cic = :taxi_id) a "
                                                          + "inner join (SELECT * FROM c.Moto_Taxi WHERE cic = :moto_id) WHERE veiculoId = :id")
+
 public class Veiculo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -43,6 +45,9 @@ public class Veiculo implements Serializable {
     
     @OneToMany(mappedBy="Veiculo")
     private List<Moto_Taxi> moto;
+    
+    @ManyToOne
+private Ponto ponto;
 
     public char getNome() {
         return nome;

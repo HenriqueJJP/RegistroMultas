@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -37,6 +38,10 @@ public class Moto_Taxi extends Veiculo implements Serializable{
     
     @OneToMany
     private List<Veiculo> veiculo;
+    
+    @OneToOne(mappedBy = "moto_taxi")
+    private Auxiliar auxiliar;
+    
     
     public Long getConcessao() {
         return concessao;
