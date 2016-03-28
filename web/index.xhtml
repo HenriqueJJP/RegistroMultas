@@ -9,15 +9,7 @@
     <h:body>
         <f:view>
         <h:form>
-            <h:panelGrid columns="2">
-                Nome: <h:inputTextarea id="nomeEmp" value="#{empresaBean.empresa.nome}"/>
-                Endereço: <h:inputTextarea id="endEmp" value="#{empresaBean.empresa.endereco}"/>
-                Contato: <h:inputTextarea id="contEmp" value="#{empresaBean.empresa.contato}"/>
-                CNPJ: <h:inputTextarea id="cnpjEmp" value="#{empresaBean.empresa.cnpj}"/>
-                Responsavel: <h:inputTextarea id="respEmp" value="#{empresaBean.empresa.responsavel}"/>
-                <h:inputHidden/>
-                <h:commandButton value="cadastrar" action="#{empresaBean.adicionarEmpresa()}"/>
-                </h:panelGrid>
+            
         </h:form>
         </f:view>
     </h:body>
