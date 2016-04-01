@@ -9,7 +9,15 @@
     <h:body>
         <f:view>
         <h:form>
-            
+            <h:panelGrid columns="2" cellpadding="10">
+                Id: <h:inputTextarea id="id" value="#{auxiliarbean.auxiliar.id}"/><br/>
+                Idade:  <h:inputTextarea id="idadeaux" value="#{auxiliarbean.auxiliar.idade}"/><br/>
+                CNH: <h:inputTextarea id="cnhaux" value="#{auxiliarbean.auxiliar.cnh}"/><br/>
+                Tempo de Condução: <h:inputTextarea id="tempcond" value="#{auxiliarbean.auxiliar.tempoconducao}"/><br/>
+                Endereço: <h:inputTextarea id="endereco" value="#{auxiliarbean.auxiliar.endereco}"/><br/>
+                <h:commandButton action="#{auxiliarbean.salvarAuxiliar()}" value="Salvar"/>
+
+            </h:panelGrid>
         </h:form>
         </f:view>
     </h:body>

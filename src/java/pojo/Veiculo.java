@@ -21,47 +21,47 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Veiculo")
 @Inheritance(strategy = InheritanceType.JOINED)
-@NamedQuery(name = "Veiculo.consultatipos", query = "SELECT * FROM a.Veiculo a inner join (SELECT * FROM b.Taxi WHERE cic = :taxi_id) a "
-                                                         + "inner join (SELECT * FROM c.Moto_Taxi WHERE cic = :moto_id) WHERE veiculoId = :id")
+//@NamedQuery(name = "Veiculo.consultatipos", query = "SELECT * FROM a.Veiculo a inner join (SELECT * FROM b.Taxi WHERE cic = :taxi_id) a "
+//                                                         + "inner join (SELECT * FROM c.Moto_Taxi WHERE cic = :moto_id) WHERE veiculoId = :id")
 
 public class Veiculo implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    public static String FIND_USER_BY_ID = "Veiculo.consultatipos";
+//    private static final long serialVersionUID = 1L;
+//    public static String FIND_USER_BY_ID = "Veiculo.consultatipos";
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
     
-    @Column(name = "nome")
-    private char nome;
+    @Column(name = "Placa")//OBS
+    private String placa;
     
     @Column(name = "modelo_veiculo")
-    private char modelo;
+    private String modelo;
     
-    @OneToMany(mappedBy="Veiculo")
-    private List<Taxi> taxi;
-    
-    @OneToMany(mappedBy="Veiculo")
-    private List<Moto_Taxi> moto;
-    
+//    @OneToMany(mappedBy="Veiculo")
+//    private List<Taxi> taxi;
+//    
+//    @OneToMany(mappedBy="Veiculo")
+//    private List<Moto_Taxi> moto;
+//    
     @ManyToOne
-private Ponto ponto;
+    private Ponto ponto;
 
-    public char getNome() {
-        return nome;
+    public String getPlaca() {
+        return placa;
     }
 
-    public void setNome(char nome) {
-        this.nome = nome;
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
-    public char getModelo() {
+    public String getModelo() {
         return modelo;
     }
 
-    public void setModelo(char modelo) {
+    public void setModelo(String modelo) {
         this.modelo = modelo;
     }
     

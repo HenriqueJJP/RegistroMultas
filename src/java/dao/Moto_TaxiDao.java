@@ -6,12 +6,14 @@
 package dao;
 
 import BaseDaoRepositorio.RepositorioImpl;
+import javax.ejb.Stateless;
 import pojo.Moto_Taxi;
 
 /**
  *
  * @author Steve
  */
+@Stateless
 public class Moto_TaxiDao extends RepositorioImpl<Moto_Taxi> {
     
 }

@@ -23,10 +23,10 @@ public class Auxiliar implements Serializable {
     private int tempoconducao;
     
     @Column(name="CNH")
-    private String cnh;
+    private boolean cnh;
     
     @Column(name="Idade")
-    private int idade;
+    private boolean idade;
     
     @Column(name="Endereco")
     private String endereco;
@@ -37,11 +37,14 @@ public class Auxiliar implements Serializable {
     @Column(name="Antecedente")
     private boolean antecedente;
     
-    @OneToOne
-    private Moto_Taxi moto_taxi;
+    /*@OneToOne
+    private Moto_Taxi moto_taxi;*/
     
     @ManyToOne
     private Taxi taxi;
+    
+    @OneToOne
+    private Moto_Taxi moto_taxi;
     
     public Auxiliar(){
         
@@ -63,19 +66,19 @@ public class Auxiliar implements Serializable {
         this.tempoconducao = tempoconducao;
     }
 
-    public String getCnh() {
+    public boolean getCnh() {
         return cnh;
     }
 
-    public void setCnh(String cnh) {
+    public void setCnh(boolean cnh) {
         this.cnh = cnh;
     }
 
-    public int getIdade() {
+    public boolean getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(boolean idade) {
         this.idade = idade;
     }
 

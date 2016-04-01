@@ -23,7 +23,7 @@ import javax.persistence.criteria.Root;
 public class RepositorioImpl<T> implements Repositorio<T> {
 
 	@Inject
-        @PersistenceContext(unitName = "ProjetoHelloWorldPU")
+        @PersistenceContext(unitName = "SifitranPU")
 	EntityManager entityManager;
 
 	protected HashMap<String, Object> parametros(Object... valores) {

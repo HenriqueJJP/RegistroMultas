@@ -17,18 +17,16 @@ import javax.persistence.Table;
 @Table(name = "Moto_Taxi")
 public class Moto_Taxi extends Veiculo implements Serializable{ 
 
-    @OneToMany(mappedBy = "Veiculo",
-            fetch = FetchType.LAZY,
-            orphanRemoval = true)
+    
     
     @Column (name = "concessao")
     private Long concessao;
 
     @Column (name = "concessionario")
-    private char concessionario;
+    private String concessionario;
     
     @Column (name = "alvara")
-    private double alvara;
+    private int alvara;
     
     @Column (name = "cic", unique = true)
     private int cic;
@@ -36,9 +34,9 @@ public class Moto_Taxi extends Veiculo implements Serializable{
     @Column (name = "end_ponto")
     private String end_ponto;
     
-    @OneToMany
-    private List<Veiculo> veiculo;
-    
+//    @OneToMany
+//    private List<Veiculo> veiculo;
+//    
     @OneToOne(mappedBy = "moto_taxi")
     private Auxiliar auxiliar;
     
@@ -51,19 +49,19 @@ public class Moto_Taxi extends Veiculo implements Serializable{
         this.concessao = concessao;
     }
 
-    public char getConcessionario() {
+    public String getConcessionario() {
         return concessionario;
     }
 
-    public void setConcessionario(char concessionario) {
+    public void setConcessionario(String concessionario) {
         this.concessionario = concessionario;
     }
 
-    public double getAlvara() {
+    public int getAlvara() {
         return alvara;
     }
 
-    public void setAlvara(double alvara) {
+    public void setAlvara(int alvara) {
         this.alvara = alvara;
     }
 
@@ -83,13 +81,27 @@ public class Moto_Taxi extends Veiculo implements Serializable{
         this.end_ponto = end_ponto;
     }
 
-    public void setVeiculo(List<Veiculo> veiculo) {
-        this.veiculo = veiculo;
+    /*@Override
+    public int getId() {
+        return super.getId(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+     @Override
+    public String getModelo() {
+        return super.getModelo(); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public List<Veiculo> getVeiculo() {
-        return veiculo;
-    }
+    @Override
+    public String getPlaca() {
+        return super.getPlaca(); //To change body of generated methods, choose Tools | Templates.
+    } */
+//    public void setVeiculo(List<Veiculo> veiculo) {
+//        this.veiculo = veiculo;
+//    }
+//
+//    public List<Veiculo> getVeiculo() {
+//        return veiculo;
+//    }
 
     @Override
     public int hashCode() {
