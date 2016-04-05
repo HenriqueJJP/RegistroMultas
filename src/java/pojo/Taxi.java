@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -15,7 +14,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Taxi")
 public class Taxi extends Veiculo implements Serializable{ 
-
     
     
     @Column (name = "concessao")
@@ -30,9 +28,6 @@ public class Taxi extends Veiculo implements Serializable{
     @Column (name = "cic", unique = true)
     private int cic;
     
-//    @OneToMany
-//    private List<Veiculo> veiculo;
-//    
     @OneToMany(mappedBy = "taxi")
     private List<Auxiliar> auxiliar;
     
@@ -67,29 +62,6 @@ public class Taxi extends Veiculo implements Serializable{
     public void setCic(int cic) {
         this.cic = cic;
     }
-
-//    public void setVeiculo(List<Veiculo> veiculo) {
-//        this.veiculo = veiculo;
-//    }
-//
-//    public List<Veiculo> getVeiculo() {
-//        return veiculo;
-//    }
-
-  /*  @Override
-    public int getId() {
-        return super.getId(); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String getModelo() {
-        return super.getModelo(); //To change body of generated methods, choose Tools | Templates.
-    } 
-
-    @Override
-    public String getPlaca() {
-        return super.getPlaca(); //To change body of generated methods, choose Tools | Templates.
-    } */
 
     @Override
     public int hashCode() {

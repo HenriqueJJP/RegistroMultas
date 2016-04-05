@@ -9,6 +9,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -28,6 +29,12 @@ public class Onibus implements Serializable {
     
     @Column(name="Motorista")
     private String motorista;
+    
+    @ManyToOne
+    private Empresa empresa;
+    
+    @ManyToOne
+    private Linha linha;
 
     public Onibus(){
         

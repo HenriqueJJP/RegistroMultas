@@ -39,13 +39,7 @@ public class Veiculo implements Serializable {
     
     @Column(name = "modelo_veiculo")
     private String modelo;
-    
-//    @OneToMany(mappedBy="Veiculo")
-//    private List<Taxi> taxi;
-//    
-//    @OneToMany(mappedBy="Veiculo")
-//    private List<Moto_Taxi> moto;
-//    
+        
     @ManyToOne
     private Ponto ponto;
 

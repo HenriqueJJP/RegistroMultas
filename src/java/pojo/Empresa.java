@@ -1,10 +1,12 @@
 package pojo;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -26,6 +28,9 @@ public class Empresa implements Serializable{
     
     @Column(name="Responsavel")
     private String responsavel;
+    
+    @OneToMany(mappedBy = "empresa")
+    private List<Onibus> onibus;
     
     public Empresa(){
         

@@ -21,8 +21,8 @@ public class Ponto implements Serializable {
     @Column(name="Nome")
     private String nome;
     
-    @Column(name="ModeloVeiculo")
-    private String modelo_veiculo;
+    @Column(name="Proximidade")
+    private String proximidade;
     
     @OneToMany(mappedBy = "ponto")
     private List<Veiculo> veiculo;
@@ -47,13 +47,15 @@ public class Ponto implements Serializable {
         this.nome = nome;
     }
 
-    public String getModelo_veiculo() {
-        return modelo_veiculo;
+    public String getProximidade() {
+        return proximidade;
     }
 
-    public void setModelo_veiculo(String modelo_veiculo) {
-        this.modelo_veiculo = modelo_veiculo;
+    public void setProximidade(String proximidade) {
+        this.proximidade = proximidade;
     }
+    
+    
 
     @Override
     public int hashCode() {

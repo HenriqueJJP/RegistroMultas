@@ -16,8 +16,8 @@ public class Auxiliar implements Serializable {
   
     
     @Id
-    @Column(name="Id")
-    private int id;
+    @Column(name="CIC")
+    private int cic;
     
     @Column(name="TempoConducao")
     private int tempoconducao;
@@ -50,12 +50,12 @@ public class Auxiliar implements Serializable {
         
     }
 
-    public int getId() {
-        return id;
+    public int getCic() {
+        return cic;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCic(int cic) {
+        this.cic = cic;
     }
 
     public int getTempoconducao() {
@@ -109,7 +109,7 @@ public class Auxiliar implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 41 * hash + this.id;
+        hash = 41 * hash + this.cic;
         return hash;
     }
 
@@ -125,7 +125,7 @@ public class Auxiliar implements Serializable {
             return false;
         }
         final Auxiliar other = (Auxiliar) obj;
-        if (this.id != other.id) {
+        if (this.cic != other.cic) {
             return false;
         }
         return true;
