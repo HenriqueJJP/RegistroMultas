@@ -37,14 +37,11 @@ public class Auxiliar implements Serializable {
     @Column(name="Antecedente")
     private boolean antecedente;
     
-    /*@OneToOne
-    private Moto_Taxi moto_taxi;*/
+    @OneToOne
+    private Moto_Taxi moto_taxi;
     
     @ManyToOne
     private Taxi taxi;
-    
-    @OneToOne
-    private Moto_Taxi moto_taxi;
     
     public Auxiliar(){
         

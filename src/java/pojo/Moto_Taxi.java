@@ -13,8 +13,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Moto_Taxi")
 public class Moto_Taxi extends Veiculo implements Serializable{ 
-
-    
     
     @Column (name = "concessao")
     private Long concessao;
@@ -64,7 +62,7 @@ public class Moto_Taxi extends Veiculo implements Serializable{
         this.cic = cic;
     }
     
-    @Override
+   /* @Override
     public int hashCode() {
         return super.hashCode(); //To change body of generated methods, choose Tools | Templates.
     }
@@ -77,7 +75,7 @@ public class Moto_Taxi extends Veiculo implements Serializable{
 		}
        
         return false;
-    }
+    }*/
 
    
 }
