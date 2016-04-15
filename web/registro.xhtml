@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>                
+                <title>SIFITRAN | Registro</title>
+                <h:outputStylesheet library="css" name="style.css" />  
+                <link rel="icon" href="#{request.contextPath}/_img/icosifitran.ico" type="image/ico" />  
+            </f:facet>
+        </h:head>
+
+        <h:body>            
+            <div id="interface">
+                <div id="box">
+                    <table id="table-header" cellpadding="0" cellspacing="0" align="center">
+                        <!-- TOPO -->
+                        <tr>
+                            <td><ui:include src="/templates/header_2.xhtml" /></td>
+                        </tr>
+                    </table>
+                    <!--MENU-->
+                    <table>
+                        <ui:include src="templates/menu2.xhtml"/>
+                    </table>
+
+                    <!--HOME-->
+                    <p:layout style="min-width:400px;min-height:355px;padding: 10px;">
+                        <p:layoutUnit position="center" resizable="true" size="630" minSize="40" maxSize="1000">
+                            <h:panelGrid id="menucad" columns="8" cellpadding="5" style="margin: 50px auto 0px auto;">
+                                <h:panelGrid columns="1" cellpadding="0">
+                                    <div>
+                                        <div style="top: 10px; position: relative">
+                                            <p:graphicImage library="img" name="taxi.png" onclick="PF('dialogTaxiRegistro').show();" alt="Taxi"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4 onclick="PF('dialogTaxiRegistro').show()">Táxi</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0">
+                                    <div>
+                                        <div style="top: 10px; position: relative">
+                                            <p:graphicImage library="img" name="bus.png" alt="Onibus"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Ônibus</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0">
+                                    <div>
+                                        <div style="top: 10px; position: relative">
+                                            <p:graphicImage library="img" name="moto.png" alt="Moto Taxi"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Moto-Táxi</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0">
+                                    <div>
+                                        <div style="top: 10px; position: relative">
+                                            <p:graphicImage library="img" name="motorista.png" alt="Motorista"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Motorista</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0"> 
+                                    <div>
+                                        <div style="top: 100px; position: relative">
+                                            <p:graphicImage library="img" name="empresa.png" alt="Empresa"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Empresa</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0"> 
+                                    <div>
+                                        <div style="top: 100px; position: relative">
+                                            <p:graphicImage library="img" name="alvara.png" alt="Alvara"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Alvará</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0">
+                                    <div>
+                                        <div style="top: 100px; position: relative">
+                                            <p:graphicImage library="img" name="ponto.png" alt="Ponto"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Ponto</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0"> 
+                                    <div>
+                                        <div style="top: 100px; position: relative">
+                                            <p:graphicImage library="img" name="linha.png" alt="Linha"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Linha</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+                            </h:panelGrid>           
+
+                        </p:layoutUnit>
+
+                    </p:layout>
+                </div>
+
+                <!-- Modal Registro Taxi -->
+                <p:dialog header="Listagem de Táxis" widgetVar="dialogTaxiRegistro" modal="true">
+                    <p:dataTable id="listaTaxi" var="taxi" value="#{taxibean.listarTaxi()}">
+                        <p:column headerText="CIC">
+                            <h:outputText value="#{taxi.cic}" />
+                        </p:column>
+
+                        <p:column headerText="Concessionário">
+                            <h:outputText value="#{taxi.concessionario}" />
+                        </p:column>
+
+                        <p:column headerText="PLaca">
+                            <h:outputText value="#{taxi.placa}" />
+                        </p:column>
+
+                        <p:column headerText="Nome e Modelo do Veículo">
+                            <h:outputText value="#{taxi.modelo}" />
+                        </p:column>
+                        
+                        <p:column headerText="Alvará">
+                            <h:outputText value="#{taxi.alvara}" />
+                        </p:column>
+                    </p:dataTable>
+                </p:dialog>
+
+                <!-- RODAPE -->
+                <table id="table-footer">
+                    <ui:include src="/templates/footer.xhtml" /> 
+                </table> 
+            </div>
+
+        </h:body>
+    </f:view>
+</html>

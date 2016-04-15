@@ -1,6 +1,7 @@
 package bean;
 
 import dao.TaxiDao;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
@@ -43,7 +44,8 @@ private Taxi taxi = new Taxi();
        txdao.atualizar(taxi);
    }
    
-   public void listarTaxi(){
-       txdao.listar();
+   public List<Taxi> listarTaxi(){
+       System.out.println("Chamou!");
+       return txdao.listar();
    }
 }

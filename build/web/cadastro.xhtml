@@ -6,276 +6,329 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
-   <f:view contentType="text/html">
-      <h:head>
-         <f:facet name="first">
-            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>                
-            <title>Semutran | Sistema de Fiscalização de Transportes </title>
-            <h:outputStylesheet library="css" name="style.css" />  
-            <link rel="icon" href="#{request.contextPath}/_img/icosifitran.ico" type="image/ico" />  
-         </f:facet>
-      </h:head>
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>                
+                <title>SIFITRAN | Cadastro</title>
+                <h:outputStylesheet library="css" name="style.css" />  
+                <link rel="icon" href="#{request.contextPath}/_img/icosifitran.ico" type="image/ico" />  
+            </f:facet>
+        </h:head>
 
-      <h:body>            
-         <div id="interface">
-            <div id="box">
-               <table id="table-header" cellpadding="0" cellspacing="0" align="center">
-                  <!-- TOPO -->
-                  <tr>
-                     <td><ui:include src="/templates/header_2.xhtml" /></td>
-                  </tr>
-               </table>
-               <!--MENU-->
-               <table>
-                  <ui:include src="templates/menu2.xhtml"/>
-               </table>
+        <h:body>            
+            <div id="interface">
+                <div id="box">
+                    <table id="table-header" cellpadding="0" cellspacing="0" align="center">
+                        <!-- TOPO -->
+                        <tr>
+                            <td><ui:include src="/templates/header_2.xhtml" /></td>
+                        </tr>
+                    </table>
+                    <!--MENU-->
+                    <table>
+                        <ui:include src="templates/menu2.xhtml"/>
+                    </table>
 
-               <!--HOME-->
-               <p:layout style="min-width:400px;min-height:355px;padding: 10px;">
-                  <p:layoutUnit position="center" resizable="true" size="630" minSize="40" maxSize="1000">
-                     <h:panelGrid id="menucad" columns="8" cellpadding="5" style="margin: 50px auto 0px auto;">
-                        <h:panelGrid columns="1" cellpadding="0">
-                           <div>
-                              <div style="top: 10px; position: relative">
-                                 <p:graphicImage library="img" name="taxi.png" onclick="PF('dialogTaxi').show();" alt="Teste"/>
-                              </div>
-                           </div>
-                           <div>
-                              <div style="top: 1px; position: relative">
-                                 <h4 onclick="PF('dialogTaxi').show()">Táxi</h4>
-                              </div>
-                           </div>
+                    <!--HOME-->
+                    <p:layout style="min-width:400px;min-height:355px;padding: 10px;">
+                        <p:layoutUnit position="center" resizable="true" size="630" minSize="40" maxSize="1000">
+                            <h:panelGrid id="menucad" columns="8" cellpadding="5" style="margin: 50px auto 0px auto;">
+                                <h:panelGrid columns="1" cellpadding="0">
+                                    <div>
+                                        <div style="top: 10px; position: relative">
+                                            <p:graphicImage library="img" name="taxi.png" onclick="PF('dialogTaxi').show();" alt="Teste"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4 onclick="PF('dialogTaxi').show()">Táxi</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0">
+                                    <div>
+                                        <div style="top: 10px; position: relative">
+                                            <p:graphicImage library="img" name="bus.png" alt="Teste"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Ônibus</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0">
+                                    <div>
+                                        <div style="top: 10px; position: relative">
+                                            <p:graphicImage library="img" name="moto.png" alt="Teste"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Moto-Táxi</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0">
+                                    <div>
+                                        <div style="top: 10px; position: relative">
+                                            <p:graphicImage library="img" name="motorista.png" alt="Teste"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Motorista</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0"> 
+                                    <div>
+                                        <div style="top: 100px; position: relative">
+                                            <p:graphicImage library="img" name="empresa.png" alt="Teste"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Empresa</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0"> 
+                                    <div>
+                                        <div style="top: 100px; position: relative">
+                                            <p:graphicImage library="img" name="alvara.png" alt="Teste"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Alvará</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0">
+                                    <div>
+                                        <div style="top: 100px; position: relative">
+                                            <p:graphicImage library="img" name="ponto.png" alt="Teste"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Ponto</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+
+                                <h:panelGrid columns="1" cellpadding="0"> 
+                                    <div>
+                                        <div style="top: 100px; position: relative">
+                                            <p:graphicImage library="img" name="linha.png" alt="Teste"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="top: 1px; position: relative">
+                                            <h4>Linha</h4>
+                                        </div>
+                                    </div>
+                                </h:panelGrid>
+                                <!---->
+                            </h:panelGrid>           
+
+                        </p:layoutUnit>
+
+                    </p:layout>
+                </div>
+
+                <!-- Modal Form Taxi -->
+                <p:dialog header="Cadastrar Táxi" widgetVar="dialogTaxi" modal="true" height="540">
+                    <h:form id="formtaxi">
+                        <h:panelGrid columns="2" cellpadding="2">
+                            <p:column>
+                                <p:outputLabel for="nomeconcessionario" value="Concessionário: " style="font-weight: bold"/>
+                            </p:column>
+                            <p:column>
+                                <p:inputText value="#{taxibean.taxi.concessionario}"
+                                             id="nomeconcessionario"
+                                             style="float: right; margin-right: 5px"
+                                             placeholder="Nome"
+                                             required="true"
+                                             requiredMessage="Campo Concessionário Obrigatório!"/>
+                            </p:column>
+
+                            <p:column>
+                                <p:outputLabel for="cic" value="CIC Concessionário: " style="font-weight: bold"/>
+                            </p:column>
+                            <p:column>
+                                <p:inputText id="cic"
+                                             value="#{taxibean.taxi.cic}"
+                                             maxlength="11"
+                                             style="float: right; margin-right: 5px"
+                                             placeholder="CPF"
+                                             required="true"
+                                             requiredMessage="Campo CIC Concecionário Obrigatório!"/>
+                            </p:column>
+
+                            <p:column>
+                                <p:outputLabel for="placa" value="Placa: " style="font-weight: bold"/>
+                            </p:column>
+                            <p:column>
+                                <p:inputMask id="placa"
+                                             value="#{taxibean.taxi.placa}"
+                                             mask="aaa-9999"
+                                             style="float: right; margin-right: 5px"
+                                             placeholder="Placa do veiculo"
+                                             required="true"
+                                             requiredMessage="Campo Placa Obrigatório!"/>
+                            </p:column>
+
+                            <p:column>
+                                <p:outputLabel for="modelotaxi" value="Nome e Modelo do Veículo: " style="font-weight: bold"/>
+                            </p:column>
+                            <p:column>
+                                <p:inputText value="#{taxibean.taxi.modelo}"
+                                             id="modelotaxi"
+                                             style="float: right; margin-right: 5px"
+                                             placeholder="Nome e Modelo"
+                                             required="true"
+                                             requiredMessage="Campo Nome e Modelo do Veículo Obrigatório!"/>
+                            </p:column>
+
+
+
+
+
+                            <p:column>
+                                <p:outputLabel for="alvara" value="Alvará Nº: " style="font-weight: bold"/>
+                            </p:column>
+                            <p:column style="float: left; margin-left: 50px">
+                                <p:inputMask id="alvara"
+                                             value="#{taxibean.taxi.alvara}"
+                                             mask="99999"
+                                             style="float: right; margin-right: 5px"
+                                             placeholder="Numero"
+                                             required="true"
+                                             requiredMessage="Campo Alvará Obrigatório!"/>
+                            </p:column>
+                            <!--
+                            <p:column>
+                                <p:outputLabel for="auxiliar" value="Auxiliar: " style="font-weight: bold"/>
+                            </p:column>
+                            <p:column>
+                                <p:inputText value="#{auxiliarbean.auxiliar.nome}" id="auxiliar" style="float: right; margin-right: 5px" placeholder="Nome"/>
+                            </p:column>
+
+                            <p:column>
+                                <p:outputLabel for="cicauxiliar" value="CIC Auxiliar: " style="font-weight: bold"/>
+                            </p:column>
+                            <p:column>
+                                <p:inputMask value="#{auxiliarbean.auxiliar.cic}" id="cicauxiliar" mask="999.999.999-99" style="float: right; margin-right: 5px" placeholder="CPF"/>
+                            </p:column>
+                            -->
+
                         </h:panelGrid>
-                        <!---->
 
-                        <h:panelGrid columns="1" cellpadding="0">
-                           <div>
-                              <div style="top: 10px; position: relative">
-                                 <p:graphicImage library="img" name="bus.png" alt="Teste"/>
-                              </div>
-                           </div>
-                           <div>
-                              <div style="top: 1px; position: relative">
-                                 <h4>Ônibus</h4>
-                              </div>
-                           </div>
-                        </h:panelGrid>
-                        <!---->
+                        <!--
+                        <p:column>
+                            <p:selectManyCheckbox id="restricoes" value="#{checkboxView.selectedConsoles}" style="float: left; margin-left: 10px">
+                                <f:selectItem  itemLabel="Maior de 21 anos" itemValue="Maior de 21 anos"/>
+                                <f:selectItem  itemLabel="CNH tipo B" itemValue="CNH tipo B"/>
+                                <f:selectItem  itemLabel="Certificação" itemValue="Certificação"/>
+                            </p:selectManyCheckbox>
+                        </p:column>
+                        -->
 
-                        <h:panelGrid columns="1" cellpadding="0">
-                           <div>
-                              <div style="top: 10px; position: relative">
-                                 <p:graphicImage library="img" name="moto.png" alt="Teste"/>
-                              </div>
-                           </div>
-                           <div>
-                              <div style="top: 1px; position: relative">
-                                 <h4>Moto-Táxi</h4>
-                              </div>
-                           </div>
-                        </h:panelGrid>
-                        <!---->
 
-                        <h:panelGrid columns="1" cellpadding="0">
-                           <div>
-                              <div style="top: 10px; position: relative">
-                                 <p:graphicImage library="img" name="motorista.png" alt="Teste"/>
-                              </div>
-                           </div>
-                           <div>
-                              <div style="top: 1px; position: relative">
-                                 <h4>Motorista</h4>
-                              </div>
-                           </div>
-                        </h:panelGrid>
-                        <!---->
+                        <!--
+                        <h:panelGrid columns="2" cellpadding="2">
+                            <p:column>
+                                <p:outputLabel for="alvara" value="Alvará Nº: " style="font-weight: bold"/>
+                            </p:column>
+                            <p:column style="float: left; margin-left: 50px">
+                                <p:inputMask id="alvara" value="#{taxibean.taxi.alvara}" mask="99999" style="float: right; margin-right: 5px" placeholder="Numero"/>
+                            </p:column>
 
-                        <h:panelGrid columns="1" cellpadding="0"> 
-                           <div>
-                              <div style="top: 100px; position: relative">
-                                 <p:graphicImage library="img" name="empresa.png" alt="Teste"/>
-                              </div>
-                           </div>
-                           <div>
-                              <div style="top: 1px; position: relative">
-                                 <h4>Empresa</h4>
-                              </div>
-                           </div>
-                        </h:panelGrid>
-                        <!---->
+                            <p:column>
+                                <p:outputLabel for="vencimentoalvara" value="Data de Vencimento: " style="font-weight: bold"/>
+                            </p:column>
+                            <p:column style="float: left; margin-left: 50px">
+                                <p:inputMask id="vencimentoalvara" value="{maskView.vencimentoalvara}" mask="99/99/9999" style="float: right; margin-right: 5px" placeholder="Data"/>
+                            </p:column>
+     
+                        </h:panelGrid>-->
 
-                        <h:panelGrid columns="1" cellpadding="0"> 
-                           <div>
-                              <div style="top: 100px; position: relative">
-                                 <p:graphicImage library="img" name="alvara.png" alt="Teste"/>
-                              </div>
-                           </div>
-                           <div>
-                              <div style="top: 1px; position: relative">
-                                 <h4>Alvará</h4>
-                              </div>
-                           </div>
-                        </h:panelGrid>
-                        <!---->
 
-                        <h:panelGrid columns="1" cellpadding="0">
-                           <div>
-                              <div style="top: 100px; position: relative">
-                                 <p:graphicImage library="img" name="ponto.png" alt="Teste"/>
-                              </div>
-                           </div>
-                           <div>
-                              <div style="top: 1px; position: relative">
-                                 <h4>Ponto</h4>
-                              </div>
-                           </div>
-                        </h:panelGrid>
-                        <!---->
+                        <p:column style="float: left; margin-left: 200px; top: 20px">
+                            <p:commandButton value="Limpar" type="reset" icon="ui-icon-reset"/>
+                        </p:column>
+                        <p:column style="float: left; margin-left: 200px; top: 20px">
+                            <p:commandButton action="#{taxibean.salvarTaxi()}"
+                                             value="Enviar"
+                                             update="display"
+                                             icon="ui-icon-submit"/>
+                        </p:column>
 
-                        <h:panelGrid columns="1" cellpadding="0"> 
-                           <div>
-                              <div style="top: 100px; position: relative">
-                                 <p:graphicImage library="img" name="linha.png" alt="Teste"/>
-                              </div>
-                           </div>
-                           <div>
-                              <div style="top: 1px; position: relative">
-                                 <h4>Linha</h4>
-                              </div>
-                           </div>
-                        </h:panelGrid>
-                        <!---->
-                     </h:panelGrid>           
+                        <p:dialog widgetVar="dialogTaxi" modal="true" resizable="false" header="Values" showEffect="fade"> 
+                            <p:panelGrid id="display" columns="2" columnClasses="label,value">
+                                <!--
+                                <p:column>
+                                    <h:outputText value="CIC Concessionário: "/>
+                                </p:column>
+                                <p:column>
+                                    <h:outputText id="cicValue" value="#{taxibean.taxi.cic}"/>
+                                </p:column>
+                                -->
 
-                  </p:layoutUnit>
+                                <p:column>
+                                    <h:outputText value="Placa: "/>
+                                </p:column>
+                                <p:column>
+                                    <h:outputText id="placaValue" value="#{taxibean.taxi.placa}"/>
+                                </p:column>
 
-               </p:layout>
+                                <!--  <p:panelGrid>
+                                     <h:outputText value="CIC Auxiliar: "/>
+                                  </p:panelGrid>
+                                  <p:panelGrid>
+                                      <h:outputText id="cicauxiliarValue" value="#{auxiliarbean.auxiliar.cic}"/>
+                                  </p:panelGrid>-->
+
+                                <p:column>
+                                    <h:outputText value="Alvará Nº: "/>
+                                </p:column>
+                                <p:column>
+                                    <h:outputText id="alvaraValue" value="#{taxibean.taxi.alvara}"/>
+                                </p:column>
+
+                                <p:column>
+                                    <h:outputText value="Data de Vencimento: "/>
+                                </p:column>
+                                <p:column>
+                                    <h:outputText id="vencimentoalvaraValue" value="{maskView.vencimentoalvara}"/>
+                                </p:column>
+                            </p:panelGrid>
+                        </p:dialog>
+                    </h:form>
+                </p:dialog>
+
+                <!-- RODAPE -->
+                <table id="table-footer">
+                    <ui:include src="/templates/footer.xhtml" /> 
+                </table> 
             </div>
 
-            <!-- Modal Form Taxi -->
-            <p:dialog header="Cadastrar Táxi" widgetVar="dialogTaxi" modal="true" height="540">
-               <h:form id="formtaxi">
-                  <h:panelGrid columns="2" cellpadding="2">
-                     <!--<h:panelGrid>
-                        <p:outputLabel for="nomeconcessionario" value="Concessionário: " style="font-weight: bold"/>
-                     </h:panelGrid>
-                     <h:panelGrid>
-                         <p:inputText value="#{taxibean.taxi.concessionario}" id="nomeconcessionario" style="float: right; margin-right: 5px" placeholder="Nome"/>
-                     </h:panelGrid>-->
-
-                     <!--<h:panelGrid>
-                        <p:outputLabel for="cic" value="CIC Concessionário: " style="font-weight: bold"/>
-                     </h:panelGrid>
-                     <h:panelGrid>
-                         <p:inputMask id="cic" value="#{taxibean.taxi.cic}" mask="999.999.999-99" style="float: right; margin-right: 5px" placeholder="CPF"/>
-                     </h:panelGrid>-->
-
-                     <h:panelGrid>
-                        <p:outputLabel for="placa" value="Placa: " style="font-weight: bold"/>
-                     </h:panelGrid>
-                     <h:panelGrid>
-                         <p:inputMask id="placa" value="#{taxibean.taxi.placa}" mask="aaa-9999" style="float: right; margin-right: 5px" placeholder="Placa do veiculo"/>
-                     </h:panelGrid>
-
-                     <!--<h:panelGrid>
-                        <p:outputLabel for="modelotaxi" value="Nome e Modelo do Veículo: " style="font-weight: bold"/>
-                     </h:panelGrid>
-                     <h:panelGrid>
-                         <p:inputText value="#{taxibean.taxi.modelo}" id="modelotaxi" style="float: right; margin-right: 5px" placeholder="Nome e Modelo"/>
-                     </h:panelGrid>-->
-
-                     <!--<h:panelGrid>
-                        <p:outputLabel for="auxiliar" value="Auxiliar: " style="font-weight: bold"/>
-                     </h:panelGrid>
-                     <h:panelGrid>
-                         <p:inputText value="#{auxiliarbean.auxiliar.nome}" id="auxiliar" style="float: right; margin-right: 5px" placeholder="Nome"/>
-                     </h:panelGrid>-->
-
-                    <!-- <h:panelGrid>
-                        <p:outputLabel for="cicauxiliar" value="CIC Auxiliar: " style="font-weight: bold"/>
-                     </h:panelGrid>
-                     <h:panelGrid>
-                         <p:inputMask value="#{auxiliarbean.auxiliar.cic}" id="cicauxiliar" mask="999.999.999-99" style="float: right; margin-right: 5px" placeholder="CPF"/>
-                     </h:panelGrid>-->
-                  </h:panelGrid>
-
-                  <!--<h:panelGrid columns="1" cellpadding="5">
-                     <p:selectManyCheckbox id="restricoes" value="#{checkboxView.selectedConsoles}" style="float: left; margin-left: 10px">
-                         <f:selectItem  itemLabel="Maior de 21 anos" itemValue="Maior de 21 anos"/>
-                         <f:selectItem  itemLabel="CNH tipo B" itemValue="CNH tipo B"/>
-                         <f:selectItem  itemLabel="Certificação" itemValue="Certificação"/>
-                     </p:selectManyCheckbox>
-                  </h:panelGrid>-->
-
-                  <h:panelGrid columns="2" cellpadding="2">
-                     <!--<h:panelGrid>
-                        <p:outputLabel for="alvara" value="Alvará Nº: " style="font-weight: bold"/>
-                     </h:panelGrid>
-                     <h:panelGrid style="float: left; margin-left: 50px">
-                         <p:inputMask id="alvara" value="#{taxibean.taxi.alvara}" mask="99999" style="float: right; margin-right: 5px" placeholder="Numero"/>
-                     </h:panelGrid>-->
-
-                    <!--<h:panelGrid>
-                        <p:outputLabel for="vencimentoalvara" value="Data de Vencimento: " style="font-weight: bold"/>
-                     </h:panelGrid>
-                     <h:panelGrid style="float: left; margin-left: 50px">
-                        <p:inputMask id="vencimentoalvara" value="{maskView.vencimentoalvara}" mask="99/99/9999" style="float: right; margin-right: 5px" placeholder="Data"/>
-                     </h:panelGrid>-->
-                  </h:panelGrid>
-
-                 
-                  <h:panelGrid columns="2" cellpadding="2" style="float: left; margin-left: 200px; top: 20px">
-                     <p:commandButton value="Limpar" type="reset" icon="ui-icon-reset"/>
-                     <p:commandButton action="#{taxibean.salvarTaxi()}" value="Enviar" update="display" icon="ui-icon-submit"/>
-                  </h:panelGrid>
-
-                  <p:dialog widgetVar="dialogTaxi" modal="true" resizable="false" header="Values" showEffect="fade"> 
-                     <p:panelGrid id="display" columns="2" columnClasses="label,value">
-                        <!--<p:panelGrid>
-                           <h:outputText value="CIC Concessionário: "/>
-                        </p:panelGrid>
-                        <p:panelGrid>
-                            <h:outputText id="cicValue" value="#{taxibean.taxi.cic}"/>
-                        </p:panelGrid>-->
-
-                        <p:panelGrid>
-                           <h:outputText value="Placa: "/>
-                        </p:panelGrid>
-                        <p:panelGrid>
-                            <h:outputText id="placaValue" value="#{taxibean.taxi.placa}"/>
-                        </p:panelGrid>
-
-                      <!--  <p:panelGrid>
-                           <h:outputText value="CIC Auxiliar: "/>
-                        </p:panelGrid>
-                        <p:panelGrid>
-                            <h:outputText id="cicauxiliarValue" value="#{auxiliarbean.auxiliar.cic}"/>
-                        </p:panelGrid>-->
-
-                        <!--<p:panelGrid>
-                           <h:outputText value="Alvará Nº: "/>
-                        </p:panelGrid>
-                        <p:panelGrid>
-                            <h:outputText id="alvaraValue" value="#{taxibean.taxi.alvara}"/>
-                        </p:panelGrid>-->
-
-                       <!-- <p:panelGrid>
-                           <h:outputText value="Data de Vencimento: "/>
-                        </p:panelGrid>
-                        <p:panelGrid>
-                           <h:outputText id="vencimentoalvaraValue" value="{maskView.vencimentoalvara}"/>
-                        </p:panelGrid>-->
-                     </p:panelGrid>
-                  </p:dialog>
-               </h:form>
-            </p:dialog>
-
-            <!-- RODAPE -->
-            <table id="table-footer">
-               <ui:include src="/templates/footer.xhtml" />
-            </table> 
-         </div>
-
-      </h:body>
-   </f:view>
+        </h:body>
+    </f:view>
 </html>

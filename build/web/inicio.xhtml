@@ -10,7 +10,7 @@
         <h:head>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>                
-                <title>Semutran | Ínicio </title>
+                <title>SIFITRAN | Ínicio </title>
                 <h:outputStylesheet library="css" name="style.css" /> 
                 <link rel="icon" href="#{request.contextPath}/_img/icosifitran.ico" type="image/ico" />  
             </f:facet>
@@ -19,71 +19,77 @@
         <h:body>            
             <div id="interface">
                 <div id="box">
-                <table id="table-header" cellpadding="0" cellspacing="0" align="center">
-                    <!-- TOPO -->
-                    <tr>
-                        <td><ui:include src="/templates/header_2.xhtml" /></td>
-                    </tr>
-                </table>
-                <!--MENU-->
+                    <table id="table-header" cellpadding="0" cellspacing="0" align="center">
+                        <!-- TOPO -->
+                        <tr>
+                            <td><ui:include src="/templates/header_2.xhtml" /></td>
+                        </tr>
+                    </table>
+                    <!--MENU-->
                     <table>
                         <ui:include src="templates/menu.xhtml"/>
                     </table>
-                    
-               <!--HOME-->
-               <p:layout style="min-width:400px;min-height:355px;padding: 10px;">
-                    <p:layoutUnit position="west" resizable="true" size="630" minSize="40" maxSize="1000">
-                        <h:panelGrid columns="4" cellpadding="5" style="margin: 40px auto 0px auto;" id="icones_menu">
-                            <h:panelGrid columns="1" cellpadding="0" style="padding: 10px">
-                                <h:form>
-                                    <h:commandLink action="cadastro.jsf">
-                                        <p:graphicImage library="img" name="cad.png" alt="Teste"/>
-                                    </h:commandLink>
-                                   <h:commandLink action="cadastro.jsf">
-                                        <h4>Cadastro</h4>
-                                    </h:commandLink>
-                                </h:form>                                
-                            </h:panelGrid>
-                            <h:panelGrid columns="1" cellpadding="0" style="padding: 10px;">
-                                <p:graphicImage library="img" name="notif.png" alt="Teste" />
-                                <h4>Notificação</h4>
-                            </h:panelGrid>
-                            <h:panelGrid columns="1" cellpadding="0" style="padding: 10px">
-                                <p:graphicImage library="img" name="regis.png" alt="Teste" />
-                                <h4>Registros</h4>                                
-                            </h:panelGrid>
-                            <h:panelGrid columns="1" cellpadding="0" style="padding: 10px;">
-                                <p:graphicImage library="img" name="statist.png" alt="Teste" />
-                                <h4>Estatisticas</h4>
-                            </h:panelGrid>
-                                
-                        </h:panelGrid>
-                    </p:layoutUnit>
 
-                    <p:layoutUnit position="center">
-                        
-                        <p:tabView>
-                            <p:tab title="Calendário" class="tab">
-                                <h:panelGrid columns="1" cellpadding="0">
-                                    <p:calendar id="inline" value="#{calendarView.date1}" mode="inline" />
+                    <!--HOME-->
+                    <p:layout style="min-width:400px;min-height:355px;padding: 10px;">
+                        <p:layoutUnit position="west" resizable="true" size="630" minSize="40" maxSize="1000">
+                            <h:panelGrid columns="4" cellpadding="5" style="margin: 40px auto 0px auto;" id="icones_menu">
+                                <h:panelGrid columns="1" cellpadding="0" style="padding: 10px">
+                                    <h:form>
+                                        <h:commandLink action="cadastro.jsf" target="blank">
+                                            <p:graphicImage library="img" name="cad.png" alt="Teste"/>
+                                        </h:commandLink>
+                                        <h:commandLink action="cadastro.jsf" target="blank">
+                                            <h4>Cadastro</h4>
+                                        </h:commandLink>
+                                    </h:form>                                
                                 </h:panelGrid>
-                            </p:tab>
-                            <p:tab title="Ultimos Cadastros">
-                                <h:panelGrid columns="2" cellpadding="10" class="tab">                                                                       
-                                    
+                                <h:panelGrid columns="1" cellpadding="0" style="padding: 10px;">
+                                    <p:graphicImage library="img" name="notif.png" alt="Teste" />
+                                    <h4>Notificação</h4>
                                 </h:panelGrid>
-                            </p:tab>
-                        </p:tabView>                         
-                        
-                    </p:layoutUnit>
-                </p:layout>
-               </div>
+                                <h:panelGrid columns="1" cellpadding="0" style="padding: 10px">
+                                    <h:form>
+                                        <h:commandLink action="registro.jsf" target="blank">
+                                            <p:graphicImage library="img" name="regis.png" alt="Teste" />
+                                        </h:commandLink>
+                                        <h:commandLink action="registro.jsf" target="blank">
+                                            <h4>Registros</h4>
+                                        </h:commandLink>
+                                    </h:form>
+                                </h:panelGrid>
+                                <h:panelGrid columns="1" cellpadding="0" style="padding: 10px;">
+                                    <p:graphicImage library="img" name="statist.png" alt="Teste" />
+                                    <h4>Estatisticas</h4>
+                                </h:panelGrid>
+
+                            </h:panelGrid>
+                        </p:layoutUnit>
+
+                        <p:layoutUnit position="center">
+
+                            <p:tabView>
+                                <p:tab title="Calendário" class="tab">
+                                    <h:panelGrid columns="1" cellpadding="0">
+                                        <p:calendar id="inline" value="#{calendarView.date1}" mode="inline" />
+                                    </h:panelGrid>
+                                </p:tab>
+                                <p:tab title="Ultimos Cadastros">
+                                    <h:panelGrid columns="2" cellpadding="10" class="tab">                                                                       
+
+                                    </h:panelGrid>
+                                </p:tab>
+                            </p:tabView>                         
+
+                        </p:layoutUnit>
+                    </p:layout>
+                </div>
                 <!-- RODAPE -->
                 <table id="table-footer">
                     <ui:include src="/templates/footer.xhtml" />
                 </table> 
             </div>
-                     
+
         </h:body>
     </f:view>
 </html>
