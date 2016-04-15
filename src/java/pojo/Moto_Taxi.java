@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Moto_Taxi extends Veiculo implements Serializable{ 
     
     @Column (name = "concessao")
-    private Long concessao;
+    private int concessao;
 
     @Column (name = "concessionario")
     private String concessionario;
@@ -23,18 +23,18 @@ public class Moto_Taxi extends Veiculo implements Serializable{
     @Column (name = "alvara")
     private int alvara;
     
-    @Column (name = "cic", unique = true)
-    private int cic;
+    @Column (name = "cic")
+    private Long cic;
         
     @OneToOne(mappedBy = "moto_taxi")
     private Auxiliar auxiliar;
     
     
-    public Long getConcessao() {
+    public int getConcessao() {
         return concessao;
     }
 
-    public void setConcessao(Long concessao) {
+    public void setConcessao(int concessao) {
         this.concessao = concessao;
     }
 
@@ -54,11 +54,11 @@ public class Moto_Taxi extends Veiculo implements Serializable{
         this.alvara = alvara;
     }
 
-    public int getCic() {
+    public Long getCic() {
         return cic;
     }
 
-    public void setCic(int cic) {
+    public void setCic(Long cic) {
         this.cic = cic;
     }
     

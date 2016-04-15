@@ -37,6 +37,9 @@ public class Auxiliar implements Serializable {
     @Column(name="Antecedente")
     private boolean antecedente;
     
+    @Column (name="Nome")
+    private String nome;
+    
     @OneToOne
     private Moto_Taxi moto_taxi;
     
@@ -102,6 +105,15 @@ public class Auxiliar implements Serializable {
     public void setAntecedente(boolean antecedente) {
         this.antecedente = antecedente;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
 
     @Override
     public int hashCode() {

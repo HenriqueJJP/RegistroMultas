@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <h:outputStylesheet library="css" name="style.css" />
+    </h:head>
+
+    <h:body>
+        <h:form id="menu">  
+ 
+            <p:menubar>
+                <p:submenu label="Perfil" icon="ui-icon-person">
+                    <p:submenu label="Editar" icon="ui-icon-pencil">
+                        <p:menuitem value="Pemissões" url="#" />
+                        <p:menuitem value="Usuarios" url="#" />
+                    </p:submenu>
+                    <p:separator />
+                    <p:menuitem value="Configurar Perfil" url="#" icon="ui-icon-gear" />
+                </p:submenu>
+
+                <p:submenu label="Configurações" icon="ui-icon-gear">            
+                </p:submenu>
+
+                <p:submenu label="Ajuda" icon="ui-icon-info">
+                    <p:menuitem value="Sobre o Sistema" url="#" icon="ui-icon-gear" />
+                    <p:submenu label="Sobre o Usuario" icon="ui-icon-person">
+                        <p:submenu label="Text">
+                            <p:menuitem value="Workspace" url="#" />
+                        </p:submenu>
+                        <p:menuitem value="File" url="#" />
+                    </p:submenu>
+                </p:submenu>
+
+
+
+                <p:menuitem value="Menú Principal" url="inicio.jsf" icon="ui-icon-back" />
+
+                <f:facet name="options">
+                    <p:inputText style="margin-right:10px" placeholder="Buscar"/>
+                    <p:button href="index.jsf" value="Sair" icon="ui-icon-extlink"/>
+                </f:facet>
+            </p:menubar>
+        </h:form>
+    </h:body>
+</html>

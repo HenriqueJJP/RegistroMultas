@@ -1,27 +1,81 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        <f:view>
-            <h:form>
-                <h:panelGrid columns="2" cellpadding="10">
-                    Id: <h:inputTextarea id="id" value="#{auxiliarbean.auxiliar.id}"/><br/>
-                    Idade:  <h:inputTextarea id="idadeaux" value="#{auxiliarbean.auxiliar.idade}"/><br/>
-                    CNH: <h:inputTextarea id="cnhaux" value="#{auxiliarbean.auxiliar.cnh}"/><br/>
-                    Tempo de Condução: <h:inputTextarea id="tempcond" value="#{auxiliarbean.auxiliar.tempoconducao}"/><br/>
-                    Endereço: <h:inputTextarea id="endereco" value="#{auxiliarbean.auxiliar.endereco}"/><br/>
-                    <h:commandButton action="#{auxiliarbean.salvarAuxiliar()}" value="Salvar"/>
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
-                </h:panelGrid>
-            </h:form>
-        </f:view>
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Página de boas-vindas do Primefaces" />
-    </h:body>
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>                
+                <title>Simutran | Sistema de Fiscalização de Transportes </title>
+                <h:outputStylesheet library="css" name="style.css" />
+                <link rel="icon" href="#{request.contextPath}/_img/icosifitran.ico" type="image/ico" />                
+            </f:facet>
+        </h:head>
+
+        <h:body>            
+            <div id="interface">
+                <div id="box">
+                    <table id="table-header" cellpadding="0" cellspacing="0" align="center">
+                        <!-- TOPO -->
+                        <tr>
+                            <td><ui:include src="/templates/header.xhtml" /></td>
+                        </tr>
+                    </table>            
+                    <div id="logo">
+                        <div style="top: 100px; position: relative">
+                            <p:graphicImage library="img" name="SiFiTran.png" width="500" height="140" alt="Teste" />
+                        </div>
+                    </div>
+                    <div id="conteudo">
+                        <div id="login">
+                            <div style="top: 30px; position: relative">
+                                <h:form id="form1">
+
+                                    <p:growl id="campoObrigatorio" life="4000" showDetail="false"
+                                             rendered="#{facesContext.validationFailed == true}" />
+                                    <p:growl for="atencao" id="atencao" life="4000" showDetail="true" />
+                                    <p:growl for="erro" id="erro" life="4000" showDetail="true" />
+                                    <p:growl for="sucesso" id="sucesso" life="4000" showDetail="true" autoUpdate="true" />
+
+                                    <p:panelGrid styleClass="painel_login" columns="1">
+                                        <h2>ACESSE SUA CONTA</h2>
+                                        <p:inputText id="usuario" value="#{usuarioBean.nomeDeUsuario}"
+                                                     required="true" style="width: 300px !important; padding: 10px;"
+                                                     requiredMessage="Campo Usuário Obrigatório!"
+                                                     validator="#{usuarioBean.validaUsuario}">
+                                            <p:watermark for="usuario" value="Usuário" />
+                                            <p:focus for="usuario" />
+                                        </p:inputText>
+                                        <p:password id="senha" value="#{usuarioBean.senha}"
+                                                    required="true" style="width: 300px !important; padding: 10px;"
+                                                    requiredMessage="Campo Senha Obrigatório!"
+                                                    validator="#{usuarioBean.validaSenha}">
+                                            <p:watermark for="senha" value="Senha" />
+                                        </p:password>
+
+                                        <p:button href="inicio.jsf" value="Entrar" icon="ui-icon-key"/>
+                                        <!--<p:commandButton id="entrar" value="Entrar" icon="ui-icon-key"/>-->
+                                        <!--action="#{usuarioBean.logar()}"
+                                        update="campoObrigatorio atencao erro"
+                                        ajax="false" onclick="PF('statusDialog').show()"/>-->                         
+
+                                    </p:panelGrid>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- RODAPE -->
+                <table id="table-footer">
+                    <ui:include src="/templates/footer.xhtml" />
+                </table>
+            </div>          
+            <br />
+            <h:link outcome="welcomePrimefaces" value="Página de boas-vindas do Primefaces" />
+        </h:body>
+    </f:view>
 </html>
-

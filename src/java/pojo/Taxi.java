@@ -17,7 +17,7 @@ public class Taxi extends Veiculo implements Serializable{
     
     
     @Column (name = "concessao")
-    private Long concessao;
+    private int concessao;
 
     @Column (name = "concessionario")
     private String concessionario;
@@ -25,17 +25,17 @@ public class Taxi extends Veiculo implements Serializable{
     @Column (name = "alvara")
     private int alvara;
     
-    @Column (name = "cic", unique = true)
-    private int cic;
+    @Column (name = "cic")
+    private Long cic;
     
     @OneToMany(mappedBy = "taxi")
     private List<Auxiliar> auxiliar;
     
-    public Long getConcessao() {
+    public int getConcessao() {
         return concessao;
     }
 
-    public void setConcessao(Long concessao) {
+    public void setConcessao(int concessao) {
         this.concessao = concessao;
     }
 
@@ -55,15 +55,15 @@ public class Taxi extends Veiculo implements Serializable{
         this.alvara = alvara;
     }
 
-    public int getCic() {
+    public Long getCic() {
         return cic;
     }
 
-    public void setCic(int cic) {
+    public void setCic(Long cic) {
         this.cic = cic;
     }
 
-    @Override
+    /*@Override
     public int hashCode() {
         return cic; //To change body of generated methods, choose Tools | Templates.
     }
@@ -76,7 +76,7 @@ public class Taxi extends Veiculo implements Serializable{
 		}
        
         return false;
-    }
+    }*/
     
     
 }

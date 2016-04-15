@@ -18,13 +18,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Veiculo")
 @Inheritance(strategy = InheritanceType.JOINED)
-//@NamedQuery(name = "Veiculo.consultatipos", query = "SELECT * FROM a.Veiculo a inner join (SELECT * FROM b.Taxi WHERE cic = :taxi_id) a "
-//                                                         + "inner join (SELECT * FROM c.Moto_Taxi WHERE cic = :moto_id) WHERE veiculoId = :id")
 
 public class Veiculo implements Serializable {
 
-//    private static final long serialVersionUID = 1L;
-//    public static String FIND_USER_BY_ID = "Veiculo.consultatipos";
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
