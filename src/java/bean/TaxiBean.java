@@ -3,13 +3,14 @@ package bean;
 import dao.TaxiDao;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import pojo.Taxi;
 
 
 @ManagedBean (name="taxibean")
-@SessionScoped
+@RequestScoped
 public class TaxiBean {
 
 @Inject
